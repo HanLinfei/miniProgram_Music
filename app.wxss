@@ -1,0 +1,13 @@
+page {
+  background-color: #fafafa;
+  box-sizing: border-box;
+}
+
+/* 修改vant的搜索框样式 */
+.van-search__content {
+  background-color: #ffffff !important;
+}
+
+.van-search {
+  padding: 20rpx 0 !important;
+}

@@ -1,0 +1,11 @@
+<view class="song-list-item" bindtap="handleSongItemClick">
+  <view class="index">{{index+1}}</view>
+  <view class="info">
+    <view class="name">{{item.name}}</view>
+    <view class="source">
+      <text class="quality" wx:if="{{item.sq}}">SQ</text>
+      <text class="author" wx:if="{{!item.ar.length}}" wx:for="{{item.ar}}" wx:key="*this" decode>{{item.name}}&nbsp;&nbsp;</text>
+      <text class="album" decode wx:if="{{item.al}}">·&nbsp;&nbsp;{{item.al.name}}</text>
+    </view>
+  </view>
+</view>

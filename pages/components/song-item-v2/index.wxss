@@ -1,0 +1,67 @@
+.song-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.index {
+  width: 8%;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.info {
+  flex: 1;
+  padding: 0 20rpx;
+}
+
+.icon {
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+
+.name {
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.author {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.album {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.source {
+  display: flex;
+  align-items: center;
+  font-size: 22rpx;
+  color: gray;
+  margin-top: 20rpx;
+}
+
+.quality {
+  padding: 0 5rpx;
+  color: rgba(236, 65, 65);
+  border: 1px solid rgba(236, 65, 65);
+  margin-right: 10rpx;
+  font-size: 16rpx;
+  border-radius: 5rpx;
+}

@@ -1,0 +1,23 @@
+.menu-list {
+  width: 100vw;
+  white-space: nowrap;
+  position: relative;
+  left: -20rpx
+    /* 为了让scroll的区域为整个容器 
+  第一种方案是通过动态获取设备的宽度 然后绑定样式
+  第二种方案是直接设置scroll的宽度为视口宽度
+  */
+}
+
+.menu-item {
+  display: inline-block;
+  margin-left: 20rpx;
+  vertical-align: top;
+  width: 220rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.menu-item:last-of-type {
+  margin-right: 20rpx;
+}

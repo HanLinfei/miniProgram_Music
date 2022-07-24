@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+}
+
+.header>.title {
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.header>.right {
+  font-size: 24rpx;
+}
+
+.header>.right .icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 3rpx;
+
+}
+
+/* 控制插槽 */
+/* 
+当别人没有在插槽里传值的时候 就说明了插槽的内容会为空 那么我们就需要我们的默认值显示出来
+所以我们一开始默认值是隐藏的 当插槽中为空元素时候 那么empty伪类就控制将默认值显示出来 
+那么当别人在插槽里插入了值 所以插槽中有了元素 所以empty伪类则不生效
+*/
+.slot:empty+.default {
+  display: flex;
+  color: gray;
+}
+
+.default {
+  display: none;
+}

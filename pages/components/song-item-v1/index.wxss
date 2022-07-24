@@ -1,0 +1,48 @@
+.item {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 16rpx;
+}
+
+.icon {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20rpx;
+}
+
+.source {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.singer-box {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.singer {
+  font-size: 22rpx;
+  color: gray;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,49 @@
+page {
+  padding-top: 225px;
+}
+
+.video {
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+.info {
+  width: 100%;
+  padding: 15rpx 20rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+}
+
+.info>.title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 40rpx;
+  margin-bottom: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+
+.info>.author,
+.info>.timer {
+  font-size: 24rpx;
+  color: gray;
+  line-height: 38rpx;
+}
+
+.related {
+  padding: 15rpx 20rpx;
+}
+
+.related>.title {
+  font-size: 32rpx;
+}

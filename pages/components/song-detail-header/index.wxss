@@ -1,0 +1,112 @@
+.header {
+  width: 100vw;
+  left: -20rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 450rpx;
+  color: #ffffff;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 40rpx;
+  box-sizing: border-box;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.header .bg-cover {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+
+}
+
+.content .image {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 18rpx;
+}
+
+.author .avatar {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 25rpx;
+}
+
+.operation {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.operation>view {
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+
+.operation image {
+  width: 45rpx;
+  margin-right: 15rpx;
+}
+
+.info {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.info>.title {
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.info .nick-name {
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.desc {
+  font-size: 22rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}

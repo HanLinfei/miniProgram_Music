@@ -1,0 +1,71 @@
+//格式化单位
+function formatCount(count) {
+  var counter = parseInt(count);
+  if (counter > 100000000) return (counter / 100000000).toFixed(1) + "亿";
+  else if (counter > 10000) return (counter / 10000).toFixed(1) + "万";
+  else return counter + "";
+}
+
+//补零操作
+function padLeftZero(time) {
+  time = time.toString();
+  return ("00" + time).slice(time.length);
+}
+
+//格式化时间
+function formatDurtion(durtion) {
+  var durtion = durtion / 1000;
+  //转分钟
+  var minute = Math.floor(durtion / 60);
+  // 分钟剩下的秒钟
+  var second = Math.floor(durtion) % 60;
+  return padLeftZero(minute) + ":" + padLeftZero(second);
+}
+
+//格式化时间戳
+function formatTimer(value, type = 0) {
+  var time = getDate(value);
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var second = time.getSeconds();
+  month = month < 10 ? "0" + month : month;
+  date = date < 10 ? "0" + date : date;
+  hour = hour < 10 ? "0" + hour : hour;
+  minute = minute < 10 ? "0" + minute : minute;
+  second = second < 10 ? "0" + second : second;
+  var arr = [
+    year + "-" + month + "-" + date,
+    year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second,
+    year + "年" + month + "月" + date,
+    year +
+      "年" +
+      month +
+      "月" +
+      date +
+      " " +
+      hour +
+      ":" +
+      minute +
+      ":" +
+      second,
+    hour + ":" + minute + ":" + second,
+    month + "月" + date + "日",
+  ];
+  return arr[type];
+}
+
+//拼接字符
+function join_(arr) {
+  return arr.join("/");
+}
+
+// commonJs导出
+module.exports = {
+  formatCount: formatCount,
+  formatDurtion: formatDurtion,
+  formatTimer: formatTimer,
+  join_: join_,
+};

@@ -1,0 +1,13 @@
+<wxs src="../../../utils/format.wxs" module="format"></wxs>
+<view class="item">
+  <view class="image-box">
+    <image src="{{item.coverUrl}}" mode="widthFix"></image>
+    <view class="play-time">{{format.formatDurtion(item.playTime)}}</view>
+  </view>
+  <view class="content">
+    <view class="title">
+      <text>{{item.title}}</text>
+    </view>
+    <view class="author"><text>{{item.creator[0].userName}}</text></view>
+  </view>
+</view>

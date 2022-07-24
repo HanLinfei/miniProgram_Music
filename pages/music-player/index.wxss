@@ -1,0 +1,163 @@
+page {
+  color: #ffffff;
+}
+
+.bg-img,
+.bg-cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg-cover {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+}
+
+/* 自定义导航 */
+.tab {
+  display: flex;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.divider {
+  margin: 0 10rpx;
+}
+
+.tab .active {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* 内容区域 */
+.music {
+  padding: 0 55rpx;
+  padding-bottom: 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content .album {
+  width: 100%;
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.content .album > .image {
+  width: 100%;
+  border-radius: 50%;
+  animation: album-rotate 10s infinite linear;
+}
+
+.content .lyric {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+/* 信息 */
+.info view {
+  margin-top: 15rpx;
+}
+
+.title {
+  font-size: 38rpx;
+}
+
+.singer {
+  font-size: 24rpx;
+  color: #999999;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.alias {
+  font-size: 26rpx;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+/* 操作栏 */
+.operation {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.operation > image {
+  flex: 0 0 7%;
+}
+
+.operation .start {
+  flex: 0 0 14%;
+}
+.playing > image {
+  width: 100%;
+}
+/* 进度条 */
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22rpx;
+  margin-top: 10rpx;
+}
+
+/* album图片旋转 */
+@keyframes album-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 歌词页面 */
+.lyric-list {
+  height: 100%;
+  padding: 0 50rpx;
+}
+
+.lyric-list .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  color: #989898;
+  font-size: 26rpx;
+}
+
+/* 去除滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.lyric-list .active {
+  color: #26ce8a;
+  font-size: 36rpx;
+}

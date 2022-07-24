@@ -1,0 +1,42 @@
+.nav-bar {
+  display: flex;
+  height: 44px;
+  align-items: center;
+}
+
+.left,
+.right {
+  width: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.back-img {
+  width: 60rpx;
+  display: flex;
+  align-items: center;
+}
+
+/* 控制插槽 */
+.left-slot:empty+.left-arrow {
+  display: block;
+}
+
+.left-arrow {
+  display: none;
+}
+
+.center-slot:empty+.center-title {
+  display: block;
+}
+
+.center-title {
+  display: none;
+}

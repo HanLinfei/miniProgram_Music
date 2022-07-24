@@ -1,0 +1,17 @@
+<!-- 判断当前歌单类型 -->
+<block wx:if="{{type ==='ranking'}}">
+  <header title="{{songInfo.name}}"
+    showRight="{{false}}"></header>
+</block>
+<block wx:if="{{type === 'menu'}}">
+  <song-detail-header songInfo="{{songInfo}}"></song-detail-header>
+</block>
+
+
+<view class="song-list">
+  <block wx:for="{{songInfo.tracks}}"
+    wx:key="id">
+    <song-item-v2 item="{{item}}" bindtap="handleSongItemClick" data-index="{{index}}"
+      index="{{index}}"></song-item-v2>
+  </block>
+</view>

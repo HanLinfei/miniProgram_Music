@@ -1,0 +1,29 @@
+<wxs src="../../../utils/format.wxs"
+  module="format"></wxs>
+<view class="ranking-item">
+  <view class="left">
+    <view class="title">{{item.name}}</view>
+    <view class="content">
+      <view wx:for="{{3}}"
+        wx:for-item="song"
+        wx:key="index">
+        <text style="margin-right: 10rpx;">{{index+1}}.</text>
+        <text>{{item.tracks[index].name}}</text> - <text class="ar"
+          wx:for="{{item.tracks[index].ar}}"
+          wx:key="index"
+          decode>{{item.name}}&nbsp;&nbsp;</text>
+      </view>
+    </view>
+  </view>
+  <view class="right">
+    <view>
+      <image mode="widthFix"
+        class="image"
+        src="{{item.coverImgUrl}}"></image>
+      <view class="play-count">
+        {{format.formatCount(item.playCount)}}
+      </view>
+      <view class="up-data">{{format.formatTimer(item.trackNumberUpdateTime,5)}}更新</view>
+    </view>
+  </view>
+</view>

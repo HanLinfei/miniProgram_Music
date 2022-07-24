@@ -1,0 +1,63 @@
+.title {
+  font-size: 32rpx;
+  padding: 0 15rpx;
+}
+
+.ranking-item {
+  padding: 10rpx 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  background: whitesmoke;
+  align-items: center;
+}
+
+.content {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  padding: 0 15rpx;
+}
+
+.content>view {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  color: gray;
+  line-height: 48rpx;
+}
+
+.right>view {
+  border-radius: 10rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.right .image {
+  width: 225rpx;
+  border-radius: 10rpx;
+}
+
+.play-count {
+  position: absolute;
+  bottom: 10rpx;
+  padding: 6rpx 8rpx;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 20rpx;
+  right: 10rpx;
+  color: #ffffff;
+  border-radius: 15rpx;
+}
+
+.up-data {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  font-size: 20rpx;
+  color: #ffffff;
+  justify-content: center;
+  top: 25%;
+}

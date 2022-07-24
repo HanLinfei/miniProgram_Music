@@ -1,0 +1,10 @@
+<view class="video">
+  <!-- 如果Wx:key绑定的时候 填写的是一个字符串 那么他就会从遍历的item中取出这个字符串对应的值进行一个绑定作为key -->
+  <view wx:for="{{Mvs}}"
+    wx:key="id"
+    class="item">
+    <video-item-v1 item="{{item}}"
+      bindtap="videoItemClick"
+      data-item="{{item}}"></video-item-v1>
+  </view>
+</view>

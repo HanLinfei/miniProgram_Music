@@ -1,0 +1,98 @@
+<wxs src="../../utils/format.wxs"
+  module="format"></wxs>
+<view>
+  <!-- 背景 -->
+  <image class="bg-img"
+    src="{{currentSong.al.picUrl}}"
+    mode="aspectFill"></image>
+  <view class="bg-cover"></view>
+</view>
+
+<!-- 导航 -->
+<nav-bar bind:click="handleBackClick">
+  <view slot="center">
+    <view class="tab">
+      <view class="{{currentPage===0 ? 'active':''}}">歌曲</view>
+      <view class="divider">|</view>
+      <view class="{{currentPage===1 ? 'active':''}}">歌词</view>
+    </view>
+  </view>
+</nav-bar>
+
+<!-- 内容展示 -->
+<swiper class="content"
+  style="height: {{contentHeight}}px;"
+  bindchange="handleSwiperChange">
+  <swiper-item class="music">
+    <view class="album">
+      <image class="image album-rotate"
+        style="animation-play-state: {{isRuning}};"
+        mode="widthFix"
+        src="{{currentSong.al.picUrl}}"></image>
+    </view>
+    <view class="info">
+      <view class="title">{{currentSong.name}}</view>
+      <view class="subtitle">
+        <view class="singer">
+          <text wx:for="{{currentSong.ar}}"
+            wx:key="name"
+            decode>{{item.name}}&nbsp;&nbsp;</text>
+        </view>
+        <view class="alias"
+          wx:if="{{currentSong.alia.length}}">专辑：{{currentSong.alia[0]}}</view>
+      </view>
+    </view>
+    <!-- <view class="lyric">我是歌词，哈哈哈哈</view> -->
+    <view class="lyric"
+      wx:if="{{isMusicLyric}}">{{currentLyricText}}</view>
+    <view class="progress"
+      style="{{!isMusicLyric?'margin-top:50rpx':''}}">
+      <slider block-size="{{12}}"
+        class="slider"
+        bindchange="handleSliderChange"
+        value="{{sliderValue}}"
+        bindchanging="handleSliderChanging"></slider>
+    </view>
+    <view class="time">
+      <view class="current"
+        wx:if="{{currentTime}}">{{format.formatDurtion(currentTime)}}</view>
+      <view class="duration">{{format.formatDurtion(duration)}}</view>
+    </view>
+    <view class="operation">
+      <image class="loop"
+        src="http://106.53.152.247/music/images/play/player-{{playModeName}}.png"
+        mode="widthFix"
+        bindtap="handleModeBtnClick"></image>
+      <image class="back"
+        bindtap="changeMusicActionPrev"
+        src="http://106.53.152.247/music/images/play/上一首.png"
+        mode="widthFix"></image>
+      <image class="start"
+        bindtap="handlePlayingBtnClick"
+        src="http://106.53.152.247/music/images/play/play-{{playingIconName}}.png"
+        mode="widthFix"></image>
+      <image class="next"
+        bindtap="changeMusicActionNext"
+        src="http://106.53.152.247/music/images/play/下一首.png"
+        mode="widthFix"></image>
+      <image class="song-list"
+        src="http://106.53.152.247/music/images/play/24gl-playlistMusic.png"
+        mode="widthFix"></image>
+    </view>
+  </swiper-item>
+  <swiper-item class="lyric">
+    <scroll-view class="lyric-list"
+      scroll-y
+      scroll-top="{{lyricScrollTop}}"
+      scroll-with-animation>
+      <block wx:for="{{lyricInfos}}"
+        wx:key="index">
+        <!-- 设置歌词高亮 -->
+        <view class="item {{currentIndex === index ? 'active':''}}"
+          style="padding-top: {{index === 0 ? lyricScrollBaseScrollTop:0}}px;padding-bottom: {{index === lyricInfos.length-1?lyricScrollBaseScrollBottom:0}}px; ">{{item.lyricText}}</view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
+<van-toast id="van-toast"></van-toast>

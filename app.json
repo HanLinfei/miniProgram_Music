@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/home-music/index",
+    "pages/home-video/index",
+    "pages/detail-video/index",
+    "pages/detail-search/index",
+    "pages/detail-songs/index",
+    "pages/music-player/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fafafa",
+    "navigationBarTitleText": "Music",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home-music/index",
+        "text": "音乐",
+        "iconPath": "assets/images/tabbar/music.png",
+        "selectedIconPath": "assets/images/tabbar/music _active.png"
+      },
+      {
+        "pagePath": "pages/home-video/index",
+        "text": "MV",
+        "iconPath": "assets/images/tabbar/video.png",
+        "selectedIconPath": "assets/images/tabbar/video_active.png"
+      }
+    ],
+    "borderStyle": "black",
+    "position": "bottom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "requireBackgroundModes": ["audio"]
+}

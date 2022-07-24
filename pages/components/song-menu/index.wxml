@@ -1,0 +1,10 @@
+<view class="song-menu">
+  <header title="{{title}}"></header>
+  <scroll-view scroll-x class="menu-list">
+    <block wx:for="{{songMenu}}" wx:key="id">
+      <view class="menu-item">
+        <menu-item item="{{item}}" bindtap="menuItemClick" data-item="{{item}}"></menu-item>
+      </view>
+    </block>
+  </scroll-view>
+</view>

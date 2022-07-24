@@ -1,0 +1,44 @@
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+
+<video class="video" src="{{mvURLInfo.url}}" autoplay referrer-policy="origin" wx:if="{{mvURLInfo.url}}"></video>
+
+<video class="video" src="{{mvURLInfo.urls[0].url}}" autoplay referrer-policy="origin" wx:else></video>
+
+<view class="content">
+
+  <view class="info" wx:if="{{mvDetail.name}}">
+    <view class="title" wx:if="{{mvDetail.name}}">
+      <text>{{mvDetail.name}}</text>
+    </view>
+    <view class="author" wx:if="{{mvDetail.artistName}}">
+      {{mvDetail.artistName}} -
+    </view>
+    <view class="timer" wx:if="{{mvDetail.playCount}}">
+      {{format.formatCount(mvDetail.playCount)}}次播放 - {{mvDetail.publishTime}}
+    </view>
+  </view>
+
+
+  <view class="info" wx:else>
+    <view class="title">
+      {{mvDetail.title}}
+    </view>
+    <view class="author">
+      {{mvDetail.creator.nickname}} -
+    </view>
+    <view class="timer">
+      {{format.formatCount(mvDetail.praisedCount)}}次点赞 -
+      {{format.formatTimer(mvDetail.publishTime)}}
+    </view>
+  </view>
+
+
+  <view class="related">
+    <text class="title">推荐视频</text>
+    <view class="related-content">
+      <view class="item" wx:for="{{mvRelatedVideos}}" wx:key="vid">
+        <video-item-v2 item="{{item}}" bindtap="videoItemClick" data-item="{{item}}"></video-item-v2>
+      </view>
+    </view>
+  </view>
+</view>

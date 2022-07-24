@@ -1,0 +1,15 @@
+<wxs src="../../../utils/format.wxs" module="format"></wxs>
+<view class="item" bindtap="handleSongItemClick" >
+  <image class="image" src="{{item.al.picUrl}}"></image>
+  <view class="content">
+    <view class="source">
+      <view class="name">{{item.name}}</view>
+      <view class="singer-box">
+        <text class="singer" wx:for="{{item.ar}}" emsp="nbsp" decode wx:key="*this">{{item.name}}&nbsp;&nbsp;</text>
+      </view>
+    </view>
+    <view class="arrow">
+      <image class="icon" src="../../../assets/images/home/arrow-right.png"></image>
+    </view>
+  </view>
+</view>
